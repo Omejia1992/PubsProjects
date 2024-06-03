@@ -1,0 +1,70 @@
+﻿@model PubsProjects.Classes.CountryInfo
+@{
+    ViewBag.Title = "CountryDetail";
+}
+
+<style>
+    table, th, td {
+        border:1px solid black;
+        text-align:center;
+    }
+
+</style>
+
+<h2> Country Detail </h2>
+<br />
+<div width="500">
+    @if (Model.Country!= null)
+    {
+    <table style="width:100%">
+        <tr width="500">
+            <td >
+                Country
+            </td>
+            <td>
+                Orders
+            </td>
+            <td>
+                Average
+            </td>
+            <td>
+                Freight Average
+            </td>
+            <td>
+                Selected Currency
+            </td>
+            <td>
+                Converted Average
+            </td>
+            <td>
+                Converted Freight Average
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Country.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Orders)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OrderAverage)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FreightAvg)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Currency.Symbol) - @Html.DisplayFor(model => model.Currency.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OrderAverageConvert)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FreightAvgConvert)
+            </td>
+        </tr>
+    </table>
+    }
+</div>
+
+

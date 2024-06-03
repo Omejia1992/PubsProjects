@@ -1,0 +1,32 @@
+﻿@model PubsProjects.Models.Request
+@{
+    ViewBag.Title = "OrdersInfo";
+}
+
+<style>
+   input[type=submit] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;       
+        margin: 4px 2px;        
+    }
+</style>
+
+<h2>Countries Order Summary</h2>
+<br />
+
+@using (Html.BeginForm())
+
+{
+    <div width="500">
+        <div>
+            @Html.DropDownListFor(m => m.CountryId, (SelectList)ViewBag.Countries)
+            @Html.DropDownListFor(m => m.CurName, (SelectList)ViewBag.Currency)
+            <input type="submit" value="Submit" class="btn"/>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.Action("LoadCountry", "Home")
+</div>
